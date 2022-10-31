@@ -2,3 +2,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container{
+    width: 100%;
+}
+
+.mat-form-field{
+    width: 100%;
+    margin: 20px 0;
+    text-align: denter;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.button{
+    width: 100%;
+}
+
+.flex{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}

@@ -4,6 +4,7 @@ import { RegistrarAsistenciaComponent } from './registrar-asistencia/registrar-a
 import { RegistrarSalidaComponent } from './registrar-salida/registrar-salida.component';
 import { ReporteComponent } from './reporte/reporte.component';
 
+
 const routes: Routes = [
   {path:'registro-asistencia', component:RegistrarAsistenciaComponent},
   {path:'registro-salida', component:RegistrarSalidaComponent},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Asistencia } from '../models/asistencia';
 
 @Component({
   selector: 'app-reporte',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reporte.component.css']
 })
 export class ReporteComponent implements OnInit {
+
+  asistencia:Asistencia[] = [];
 
   constructor() { }
 

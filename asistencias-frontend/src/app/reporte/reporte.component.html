@@ -1,1 +1,24 @@
-<p>reporte works!</p>
+<div class="container">
+    <mat-card class="example-card" style="width: 900px; margin: auto;">
+        <mat-card-title>REPORTE DE ASISTENCIA</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-grid-list cols="2">
+                <mat-grid-tile>
+                    <div>
+                        <mat-list>
+                            <div *ngFor="let asistencia of asistencias">
+                                <mat-list-item>{{asistencia.estudiante.nombre}}</mat-list-item>
+                            </div>
+                        </mat-list>
+                    </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+
+                </mat-grid-tile>
+              </mat-grid-list>
+          </mat-list>
+
+    </mat-card>
+</div>
