@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'asistencias-frontend';
+
+  rutas: any[] = [
+    {
+      name: 'Registrar asistencia',
+      router: ['registro-asistencia']
+    },
+    {
+      name: 'Registrar salida',
+      router: ['registro-salida']
+    },
+    {
+      name: 'Reposrte de salida',
+      router: ['reporte']
+    }
+  ];
 }
