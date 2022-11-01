@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Asistencia } from '../models/asistencia';
+import { Aula } from '../models/aula';
+import { Estudiante } from '../models/estudiante';
+import { AulaService } from '../services/aula.service';
 
 @Component({
   selector: 'app-reporte',
@@ -8,11 +11,37 @@ import { Asistencia } from '../models/asistencia';
 })
 export class ReporteComponent implements OnInit {
 
-  asistencia:Asistencia[] = [];
+  asistencias:Asistencia[] = [];
+  aula!: Aula;
+  estudiantes: Estudiante[] = [];
 
-  constructor() { }
+  constructor(private aulaService:AulaService) { }
 
   ngOnInit(): void {
+
+    this.aulaService.obtenerAulaPorId(1).subscribe(respuesta =>{
+      console.log(respuesta);
+      this.aula = respuesta;
+      this.estudiantes = this.aula.estudiantes;
+      this.buscarAsitencia();
+    });
+
+  }
+
+
+  buscarAsitencia(){
+    this.estudiantes.forEach((e: Estudiante) => {
+      this.aulaService.buscarAsistenciaPorCodigo(e.codigo).subscribe({
+        next: (asistencia: Asistencia) => {
+          this.asistencias.push(asistencia);
+        },
+        error: err => {
+          let nuevaAsitencia: Asistencia =new Asistencia();
+          nuevaAsitencia.estudiante = e;
+          this.asistencias.push(nuevaAsitencia);
+        }
+      })
+    });
   }
 
 }

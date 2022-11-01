@@ -1,1 +1,12 @@
-<p>registrar-asistencia works!</p>
+<div class="container">
+    <mat-card class="card">
+        <mat-card-title>REGISTRO DE ASISTENCIA</mat-card-title>
+        <mat-divider></mat-divider>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Ingrese le código del estudiante</mat-label>
+            <input [(ngModel)]="estudiante.codigo" matInput>
+          </mat-form-field>
+          <button mat-raised-button color="primary" style="width: 100%;" (click)="registrarAsistencia()">Registrar asistencia</button>
+    </mat-card>
+</div>
